@@ -62,8 +62,8 @@ This project implements a microservice-based authentication system for a Virtual
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-github-repository-url>
-    cd <your-repository-directory>
+    git clone https://github.com/Vignesh-pes/CC_SectionB_Team15.git
+    cd User-Authentication(integrated-with-MFA)
     ```
 
 2.  **Configure Environment Variables:**
@@ -104,7 +104,7 @@ This will start the `auth-backend`, `auth-frontend`, and `mfa` services in detac
 
 * **Auth Backend:**
     * `POST /api/auth/login`: Verifies user password against Supabase custom user table.
-* **MFA Service ([MFA Microservice Name]):**
+* **MFA Service:**
     * `POST /generate-otp`: Sends an OTP to the provided email. Requires `{"email": "..."}`.
     * `POST /verify-otp`: Verifies the submitted OTP for the given email against Supabase. Requires `{"email": "...", "otp": "..."}`.
 
