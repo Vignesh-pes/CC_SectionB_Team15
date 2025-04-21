@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: activity-logs-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - activity-logs-network
+    restart: unless-stopped
+
+  # Activity Logs microservice
+  activity-logs-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: activity-logs-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/activity-logs
+    networks:
+      - activity-logs-network
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+
+networks:
+  activity-logs-network:
+    driver: bridge

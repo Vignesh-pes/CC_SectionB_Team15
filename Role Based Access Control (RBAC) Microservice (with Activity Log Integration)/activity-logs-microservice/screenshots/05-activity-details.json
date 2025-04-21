@@ -1,0 +1,15 @@
+{
+  "_id": "67fb9bfa92ccf0badf531f14",
+  "userId": "mobile_user",
+  "action": "login",
+  "ipAddress": "::1",
+  "userAgent": "axios/1.8.4",
+  "details": {
+    "browser": "Chrome",
+    "os": "Android",
+    "device": "Mobile"
+  },
+  "status": "success",
+  "timestamp": "2025-04-13T11:11:54.757Z",
+  "__v": 0
+}

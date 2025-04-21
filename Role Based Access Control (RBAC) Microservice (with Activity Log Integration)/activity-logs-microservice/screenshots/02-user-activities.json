@@ -1,0 +1,130 @@
+{
+  "data": [
+    {
+      "_id": "67fb9bfa92ccf0badf531f06",
+      "userId": "john_doe",
+      "action": "logout",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "sessionDuration": "2h 15m"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.687Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f04",
+      "userId": "john_doe",
+      "action": "permission_change",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "newRole": "editor",
+        "previousRole": "viewer"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.680Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f02",
+      "userId": "john_doe",
+      "action": "profile_update",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "fields": [
+          "name",
+          "email"
+        ],
+        "previousEmail": "john@example.com",
+        "newEmail": "john.doe@example.com"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.674Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f00",
+      "userId": "john_doe",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.658Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d767",
+      "userId": "john_doe",
+      "action": "logout",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "sessionDuration": "2h 15m"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.405Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d765",
+      "userId": "john_doe",
+      "action": "permission_change",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "newRole": "editor",
+        "previousRole": "viewer"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.397Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d763",
+      "userId": "john_doe",
+      "action": "profile_update",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "fields": [
+          "name",
+          "email"
+        ],
+        "previousEmail": "john@example.com",
+        "newEmail": "john.doe@example.com"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.391Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d761",
+      "userId": "john_doe",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.375Z",
+      "__v": 0
+    }
+  ],
+  "pagination": {
+    "total": 8,
+    "page": 1,
+    "limit": 10,
+    "pages": 1
+  }
+}

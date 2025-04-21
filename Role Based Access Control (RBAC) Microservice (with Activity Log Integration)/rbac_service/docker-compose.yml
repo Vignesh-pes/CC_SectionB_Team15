@@ -1,0 +1,85 @@
+# rbac_service/docker-compose.yml (Merged Version)
+version: '3.8'
+
+services:
+  # --- Your RBAC PostgreSQL DB ---
+  db:
+    image: postgres:15-alpine
+    container_name: rbac_db # Added container name for clarity
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: rbac_db
+    ports:
+      - "5432:5432"
+    networks:
+      - rbac_network # Use your common network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d rbac_db || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # --- Your RBAC App ---
+  app:
+    build: .
+    container_name: rbac_app # Added container name
+    volumes:
+      - ./app:/app/app
+    ports:
+      - "8000:8000"
+    networks:
+      - rbac_network # Use your common network
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/rbac_db
+      # Set the correct URL for the activity log service (using its service name)
+      ACTIVITY_LOG_SERVICE_URL: http://activity-logs-service:3000/api/activities
+    depends_on:
+      db:
+        condition: service_healthy
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  # --- MongoDB Service (for Activity Logs) ---
+  mongo: # Renamed service to 'mongo' for consistency in this file
+    image: mongo:latest
+    container_name: activity_logs_mongodb # Kept container name from Team 9
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017" # Optional: Expose port for debugging
+    networks:
+      - rbac_network # Use your common network
+    restart: unless-stopped
+
+  # --- Activity Logs Service (Team 9) ---
+  activity-logs-service: # Using Team 9's preferred service name
+    build:
+      # !!! CRITICAL: Replace with the correct relative path !!!
+      # Example: context: ../activity_logs_service
+      context: ../activity-logs-microservice
+      dockerfile: Dockerfile # Assuming their Dockerfile is named 'Dockerfile'
+    container_name: activity-logs-service # Kept container name from Team 9
+    ports:
+      - "3000:3000"
+    networks:
+      - rbac_network # Use your common network
+    environment:
+      - NODE_ENV=production # Copied from their file
+      - PORT=3000
+      # !!! IMPORTANT: Use 'mongo' hostname here, matching the service name above !!!
+      - MONGODB_URI=mongodb://mongo:27017/activity-logs
+    depends_on:
+      - mongo # Depends on the 'mongo' service defined above
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  mongo_data: # Added volume for MongoDB
+
+networks:
+  rbac_network: # Your common network
+    driver: bridge

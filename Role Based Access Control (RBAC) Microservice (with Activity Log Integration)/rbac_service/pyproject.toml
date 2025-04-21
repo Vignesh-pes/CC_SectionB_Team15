@@ -1,0 +1,17 @@
+# pyproject.toml
+
+[tool.pytest.ini_options]
+# Add command line options here if needed, e.g., -v for verbose
+addopts = "-v --disable-warnings" # Example: verbose and disable warnings (optional)
+
+# Define test paths (usually pytest finds 'tests' automatically)
+testpaths = [
+    "tests",
+]
+
+# Set pythonpath to help pytest find your 'app' module
+pythonpath = ["."]
+
+# NOTE: The 'env' block that caused warnings previously has been removed.
+# Use the fallback logic in conftest.py or set TEST_DATABASE_URL
+# manually in your terminal environment if needed.

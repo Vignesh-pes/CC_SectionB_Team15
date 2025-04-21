@@ -1,0 +1,130 @@
+{
+  "data": [
+    {
+      "_id": "67fb9bfa92ccf0badf531f14",
+      "userId": "mobile_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Android",
+        "device": "Mobile"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.757Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f0e",
+      "userId": "mobile_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Safari",
+        "os": "iOS",
+        "device": "Mobile"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.717Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f08",
+      "userId": "admin_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Firefox",
+        "os": "MacOS",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.697Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb9bfa92ccf0badf531f00",
+      "userId": "john_doe",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T11:11:54.658Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d775",
+      "userId": "mobile_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Android",
+        "device": "Mobile"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.452Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d76f",
+      "userId": "mobile_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Safari",
+        "os": "iOS",
+        "device": "Mobile"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.430Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d769",
+      "userId": "admin_user",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Firefox",
+        "os": "MacOS",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.411Z",
+      "__v": 0
+    },
+    {
+      "_id": "67fb988cd718ca8e6229d761",
+      "userId": "john_doe",
+      "action": "login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Desktop"
+      },
+      "status": "success",
+      "timestamp": "2025-04-13T10:57:16.375Z",
+      "__v": 0
+    }
+  ],
+  "pagination": {
+    "total": 8,
+    "page": 1,
+    "limit": 10,
+    "pages": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "_id": "67fb9bfa92ccf0badf531f10",
+      "userId": "mobile_user",
+      "action": "failed_login",
+      "ipAddress": "::1",
+      "userAgent": "axios/1.8.4",
+      "details": {
+        "browser": "Chrome",
+        "os": "Android",
+        "device": "Mobile",
+        "reason": "incorrect_password",
+        "attemptCount": 1
+      },
+      "status": "failure",
+      "timestamp": "2025-04-13T11:11:54.723Z",
+      "__v": 0
+    }
+  ],
+  "message": "Filtered failed activities"
+}
