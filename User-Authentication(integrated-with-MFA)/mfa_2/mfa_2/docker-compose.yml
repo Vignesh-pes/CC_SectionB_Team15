@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mfa:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      - SUPABASE_URL=https://gtofnplyossudcoqdjmt.supabase.co
+      - SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0b2ZucGx5b3NzdWRjb3Fkam10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUyMTg0MTMsImV4cCI6MjA2MDc5NDQxM30.1uHcKB7el4_Kfr1zrNvyyWVEHTJldywiMAi81wsGK5U
+      - MAIL_USERNAME=vanshikajadhav0187@gmail.com
+      - MAIL_PASSWORD=qsla weto xnor yrls
+      - MAIL_SERVER=smtp.gmail.com
+      - MAIL_PORT=587
+      - MAIL_USE_TLS=True

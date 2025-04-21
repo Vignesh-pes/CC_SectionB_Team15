@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: '3.8' # Use a recent version
+
+services:
+  # Backend Service (Node.js)
+  backend:
+    build: ./auth-backend # Path to the backend's Dockerfile context
+    container_name: auth_backend_service
+    restart: unless-stopped
+    environment:
+      # Pass Supabase credentials as environment variables
+      # Make sure your server.js reads these using process.env
+      SUPABASE_URL: ${SUPABASE_URL} # Reads from .env file in root directory
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY} # Reads from .env file in root directory
+      PORT: 3001 # Port inside the container
+      # NODE_ENV: production # Recommended for production
+    # No 'ports' needed here if only accessed via frontend proxy within Docker network
+    # If you NEED to access the backend directly from your host machine (e.g., for Postman testing),
+    # uncomment the ports section:
+    # ports:
+    #   - "3001:3001"
+    networks:
+      - app-network
+
+  # Frontend Service (React + Nginx)
+  frontend:
+    build: ./auth-frontend # Path to the frontend's Dockerfile context
+    container_name: auth_frontend_service
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Map host port 8080 to Nginx container port 80
+    depends_on:
+      - backend # Ensures backend container starts before frontend (doesn't guarantee readiness)
+    networks:
+      - app-network
+
+# Define the network
+networks:
+  app-network:
+    driver: bridge

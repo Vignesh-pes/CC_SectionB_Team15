@@ -1,0 +1,6 @@
+flask==2.0.1
+werkzeug==2.0.1
+flask-mail==0.9.1
+supabase==0.5.8
+python-dotenv==0.19.1
+Flask-CORS
