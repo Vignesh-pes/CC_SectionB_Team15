@@ -1,0 +1,6 @@
+Flask
+Flask-CORS
+Flask-WTF     # If using FlaskForm
+supabase
+requests
+python-dotenv
