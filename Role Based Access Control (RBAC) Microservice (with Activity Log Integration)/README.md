@@ -12,6 +12,7 @@ This service integrates with the **Activity Logs microservice** developed by **T
 
 ## Project Structure
 -----------------
+```
 .
 ├── app/                    # Main application code (FastAPI, SQLAlchemy)
 │   ├── api/                # API Router setup
@@ -56,7 +57,7 @@ This service integrates with the **Activity Logs microservice** developed by **T
 ├── requirements.txt        # Python dependencies
 ├── pyproject.toml          # Project metadata and pytest configuration
 └── README.md               # This file
-
+```
 ## Technologies Used
 -----------------
 * **RBAC Service (`app`):**
